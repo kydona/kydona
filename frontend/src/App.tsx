@@ -334,7 +334,7 @@ function App() {
         //new Function("props", ytext.toString())
         Box = new Function("props", ytext.toString())
         //Box({React : React, useFrame : useFrame})
-        boxElement = React.createElement(Box, {position: [1.2, 0, 0], color: colorContent, React: React, useFrame: useFrame, ycolor: ycolor})
+        boxElement = React.createElement(Box, {position: [1.2, 0, 0], color: colorContent, React: React, useFrame: useFrame, ycolor: ycolor, currentColor: colorContent})
         setShouldRerender(ytext.toString())
         console.log("valid code")
     }catch(err){
@@ -381,7 +381,7 @@ function App() {
     //setColorContent('gray')
     
     Box = new Function("props", ytext.toString())
-    boxElement = React.createElement(Box, {position: [1.2, 0, 0], color: colorContent, React: React, useFrame: useFrame, ycolor: ycolor})
+    boxElement = React.createElement(Box, {position: [1.2, 0, 0], color: colorContent, React: React, useFrame: useFrame, ycolor: ycolor, currentColor: colorContent})
     setShouldRerender(ytext.toString())
     
     const editorView = new EditorView({
@@ -403,12 +403,12 @@ function App() {
   //const element = React.createElement(acornObject );
   
   //works
-  const meshElement = React.createElement("mesh", {}, 
-    React.createElement("boxGeometry", {args: [1, 1, 1]}), 
-    React.createElement("meshStandardMaterial", {color: "green"}))
+  //const meshElement = React.createElement("mesh", {}, 
+  //  React.createElement("boxGeometry", {args: [1, 1, 1]}), 
+  //  React.createElement("meshStandardMaterial", {color: "green"}))
   
  // const meshElement = React.createElement(Box, {position: [1.2, 0, 0], color: colorContent})
-  let boxElement = React.createElement(Box, {position: [1.2, 0, 0], color: colorContent, React: React, useFrame: useFrame})
+  let boxElement = React.createElement(Box, {position: [1.2, 0, 0], color: colorContent, React: React, useFrame: useFrame, ycolor: ycolor, currentColor: colorContent})
   
   return (
     <>
