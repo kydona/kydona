@@ -1,0 +1,553 @@
+{
+    "type": "Program",
+    "body": [
+      {
+        "type": "FunctionDeclaration",
+        "id": {
+          "type": "Identifier",
+          "name": "Box"
+        },
+        "expression": false,
+        "generator": false,
+        "async": false,
+        "params": [
+          {
+            "type": "Identifier",
+            "name": "props"
+          }
+        ],
+        "body": {
+          "type": "BlockStatement",
+          "body": [
+            {
+              "type": "VariableDeclaration",
+              "declarations": [
+                {
+                  "type": "VariableDeclarator",
+                  "id": {
+                    "type": "Identifier",
+                    "name": "meshRef"
+                  },
+                  "init": {
+                    "type": "CallExpression",
+                    "callee": {
+                      "type": "Identifier",
+                      "name": "useRef"
+                    },
+                    "arguments": [],
+                    "optional": false
+                  }
+                }
+              ],
+              "kind": "const"
+            },
+            {
+              "type": "VariableDeclaration",
+              "declarations": [
+                {
+                  "type": "VariableDeclarator",
+                  "id": {
+                    "type": "ArrayPattern",
+                    "elements": [
+                      {
+                        "type": "Identifier",
+                        "name": "hovered"
+                      },
+                      {
+                        "type": "Identifier",
+                        "name": "setHover"
+                      }
+                    ]
+                  },
+                  "init": {
+                    "type": "CallExpression",
+                    "callee": {
+                      "type": "Identifier",
+                      "name": "useState"
+                    },
+                    "arguments": [
+                      {
+                        "type": "Literal",
+                        "value": false,
+                        "raw": "false"
+                      }
+                    ],
+                    "optional": false
+                  }
+                }
+              ],
+              "kind": "const"
+            },
+            {
+              "type": "VariableDeclaration",
+              "declarations": [
+                {
+                  "type": "VariableDeclarator",
+                  "id": {
+                    "type": "ArrayPattern",
+                    "elements": [
+                      {
+                        "type": "Identifier",
+                        "name": "active"
+                      },
+                      {
+                        "type": "Identifier",
+                        "name": "setActive"
+                      }
+                    ]
+                  },
+                  "init": {
+                    "type": "CallExpression",
+                    "callee": {
+                      "type": "Identifier",
+                      "name": "useState"
+                    },
+                    "arguments": [
+                      {
+                        "type": "Literal",
+                        "value": false,
+                        "raw": "false"
+                      }
+                    ],
+                    "optional": false
+                  }
+                }
+              ],
+              "kind": "const"
+            },
+            {
+              "type": "ExpressionStatement",
+              "expression": {
+                "type": "CallExpression",
+                "callee": {
+                  "type": "Identifier",
+                  "name": "useFrame"
+                },
+                "arguments": [
+                  {
+                    "type": "ArrowFunctionExpression",
+                    "id": null,
+                    "expression": true,
+                    "generator": false,
+                    "async": false,
+                    "params": [
+                      {
+                        "type": "Identifier",
+                        "name": "state"
+                      },
+                      {
+                        "type": "Identifier",
+                        "name": "delta"
+                      }
+                    ],
+                    "body": {
+                      "type": "AssignmentExpression",
+                      "operator": "+=",
+                      "left": {
+                        "type": "MemberExpression",
+                        "object": {
+                          "type": "MemberExpression",
+                          "object": {
+                            "type": "MemberExpression",
+                            "object": {
+                              "type": "Identifier",
+                              "name": "meshRef"
+                            },
+                            "property": {
+                              "type": "Identifier",
+                              "name": "current"
+                            },
+                            "computed": false,
+                            "optional": false
+                          },
+                          "property": {
+                            "type": "Identifier",
+                            "name": "rotation"
+                          },
+                          "computed": false,
+                          "optional": false
+                        },
+                        "property": {
+                          "type": "Identifier",
+                          "name": "x"
+                        },
+                        "computed": false,
+                        "optional": false
+                      },
+                      "right": {
+                        "type": "Identifier",
+                        "name": "delta"
+                      }
+                    }
+                  }
+                ],
+                "optional": false
+              }
+            },
+            {
+              "type": "ReturnStatement",
+              "argument": {
+                "type": "JSXElement",
+                "openingElement": {
+                  "type": "JSXOpeningElement",
+                  "attributes": [
+                    {
+                      "type": "JSXSpreadAttribute",
+                      "argument": {
+                        "type": "Identifier",
+                        "name": "props"
+                      }
+                    },
+                    {
+                      "type": "JSXAttribute",
+                      "name": {
+                        "type": "JSXIdentifier",
+                        "name": "ref"
+                      },
+                      "value": {
+                        "type": "JSXExpressionContainer",
+                        "expression": {
+                          "type": "Identifier",
+                          "name": "meshRef"
+                        }
+                      }
+                    },
+                    {
+                      "type": "JSXAttribute",
+                      "name": {
+                        "type": "JSXIdentifier",
+                        "name": "scale"
+                      },
+                      "value": {
+                        "type": "JSXExpressionContainer",
+                        "expression": {
+                          "type": "ConditionalExpression",
+                          "test": {
+                            "type": "Identifier",
+                            "name": "active"
+                          },
+                          "consequent": {
+                            "type": "Literal",
+                            "value": 1.5,
+                            "raw": "1.5"
+                          },
+                          "alternate": {
+                            "type": "Literal",
+                            "value": 1,
+                            "raw": "1"
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "type": "JSXAttribute",
+                      "name": {
+                        "type": "JSXIdentifier",
+                        "name": "onClick"
+                      },
+                      "value": {
+                        "type": "JSXExpressionContainer",
+                        "expression": {
+                          "type": "ArrowFunctionExpression",
+                          "id": null,
+                          "expression": true,
+                          "generator": false,
+                          "async": false,
+                          "params": [
+                            {
+                              "type": "Identifier",
+                              "name": "event"
+                            }
+                          ],
+                          "body": {
+                            "type": "CallExpression",
+                            "callee": {
+                              "type": "Identifier",
+                              "name": "setActive"
+                            },
+                            "arguments": [
+                              {
+                                "type": "UnaryExpression",
+                                "operator": "!",
+                                "prefix": true,
+                                "argument": {
+                                  "type": "Identifier",
+                                  "name": "active"
+                                }
+                              }
+                            ],
+                            "optional": false
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "type": "JSXAttribute",
+                      "name": {
+                        "type": "JSXIdentifier",
+                        "name": "onPointerOver"
+                      },
+                      "value": {
+                        "type": "JSXExpressionContainer",
+                        "expression": {
+                          "type": "ArrowFunctionExpression",
+                          "id": null,
+                          "expression": false,
+                          "generator": false,
+                          "async": false,
+                          "params": [
+                            {
+                              "type": "Identifier",
+                              "name": "event"
+                            }
+                          ],
+                          "body": {
+                            "type": "BlockStatement",
+                            "body": [
+                              {
+                                "type": "ExpressionStatement",
+                                "expression": {
+                                  "type": "CallExpression",
+                                  "callee": {
+                                    "type": "Identifier",
+                                    "name": "setHover"
+                                  },
+                                  "arguments": [
+                                    {
+                                      "type": "Literal",
+                                      "value": true,
+                                      "raw": "true"
+                                    }
+                                  ],
+                                  "optional": false
+                                }
+                              },
+                              {
+                                "type": "ExpressionStatement",
+                                "expression": {
+                                  "type": "CallExpression",
+                                  "callee": {
+                                    "type": "MemberExpression",
+                                    "object": {
+                                      "type": "Identifier",
+                                      "name": "ycolor"
+                                    },
+                                    "property": {
+                                      "type": "Identifier",
+                                      "name": "set"
+                                    },
+                                    "computed": false,
+                                    "optional": false
+                                  },
+                                  "arguments": [
+                                    {
+                                      "type": "Literal",
+                                      "value": "color",
+                                      "raw": "\"color\""
+                                    },
+                                    {
+                                      "type": "Identifier",
+                                      "name": "userHex"
+                                    }
+                                  ],
+                                  "optional": false
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "type": "JSXAttribute",
+                      "name": {
+                        "type": "JSXIdentifier",
+                        "name": "onPointerOut"
+                      },
+                      "value": {
+                        "type": "JSXExpressionContainer",
+                        "expression": {
+                          "type": "ArrowFunctionExpression",
+                          "id": null,
+                          "expression": false,
+                          "generator": false,
+                          "async": false,
+                          "params": [
+                            {
+                              "type": "Identifier",
+                              "name": "event"
+                            }
+                          ],
+                          "body": {
+                            "type": "BlockStatement",
+                            "body": [
+                              {
+                                "type": "ExpressionStatement",
+                                "expression": {
+                                  "type": "CallExpression",
+                                  "callee": {
+                                    "type": "Identifier",
+                                    "name": "setHover"
+                                  },
+                                  "arguments": [
+                                    {
+                                      "type": "Literal",
+                                      "value": false,
+                                      "raw": "false"
+                                    }
+                                  ],
+                                  "optional": false
+                                }
+                              },
+                              {
+                                "type": "ExpressionStatement",
+                                "expression": {
+                                  "type": "CallExpression",
+                                  "callee": {
+                                    "type": "MemberExpression",
+                                    "object": {
+                                      "type": "Identifier",
+                                      "name": "ycolor"
+                                    },
+                                    "property": {
+                                      "type": "Identifier",
+                                      "name": "set"
+                                    },
+                                    "computed": false,
+                                    "optional": false
+                                  },
+                                  "arguments": [
+                                    {
+                                      "type": "Literal",
+                                      "value": "color",
+                                      "raw": "\"color\""
+                                    },
+                                    {
+                                      "type": "Identifier",
+                                      "name": "defaultColor"
+                                    }
+                                  ],
+                                  "optional": false
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "name": {
+                    "type": "JSXIdentifier",
+                    "name": "mesh"
+                  },
+                  "selfClosing": false
+                },
+                "closingElement": {
+                  "type": "JSXClosingElement",
+                  "name": {
+                    "type": "JSXIdentifier",
+                    "name": "mesh"
+                  }
+                },
+                "children": [
+                  {
+                    "type": "JSXElement",
+                    "openingElement": {
+                      "type": "JSXOpeningElement",
+                      "attributes": [
+                        {
+                          "type": "JSXAttribute",
+                          "name": {
+                            "type": "JSXIdentifier",
+                            "name": "args"
+                          },
+                          "value": {
+                            "type": "JSXExpressionContainer",
+                            "expression": {
+                              "type": "ArrayExpression",
+                              "elements": [
+                                {
+                                  "type": "Literal",
+                                  "value": 1,
+                                  "raw": "1"
+                                },
+                                {
+                                  "type": "Literal",
+                                  "value": 1,
+                                  "raw": "1"
+                                },
+                                {
+                                  "type": "Literal",
+                                  "value": 1,
+                                  "raw": "1"
+                                }
+                              ]
+                            }
+                          }
+                        }
+                      ],
+                      "name": {
+                        "type": "JSXIdentifier",
+                        "name": "boxGeometry"
+                      },
+                      "selfClosing": true
+                    },
+                    "closingElement": null,
+                    "children": []
+                  },
+                  {
+                    "type": "JSXElement",
+                    "openingElement": {
+                      "type": "JSXOpeningElement",
+                      "attributes": [
+                        {
+                          "type": "JSXAttribute",
+                          "name": {
+                            "type": "JSXIdentifier",
+                            "name": "color"
+                          },
+                          "value": {
+                            "type": "JSXExpressionContainer",
+                            "expression": {
+                              "type": "LogicalExpression",
+                              "left": {
+                                "type": "MemberExpression",
+                                "object": {
+                                  "type": "Identifier",
+                                  "name": "props"
+                                },
+                                "property": {
+                                  "type": "Identifier",
+                                  "name": "color"
+                                },
+                                "computed": false,
+                                "optional": false
+                              },
+                              "operator": "??",
+                              "right": {
+                                "type": "Literal",
+                                "value": "gray",
+                                "raw": "'gray'"
+                              }
+                            }
+                          }
+                        }
+                      ],
+                      "name": {
+                        "type": "JSXIdentifier",
+                        "name": "meshStandardMaterial"
+                      },
+                      "selfClosing": true
+                    },
+                    "closingElement": null,
+                    "children": []
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "sourceType": "module"
+  }

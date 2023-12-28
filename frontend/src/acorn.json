@@ -1,0 +1,153 @@
+{
+    "type": "Program",
+    "start": 0,
+    "end": 110,
+    "body": [
+      {
+        "type": "ExpressionStatement",
+        "start": 0,
+        "end": 109,
+        "expression": {
+          "type": "JSXElement",
+          "start": 0,
+          "end": 109,
+          "openingElement": {
+            "type": "JSXOpeningElement",
+            "start": 0,
+            "end": 6,
+            "attributes": [],
+            "name": {
+              "type": "JSXIdentifier",
+              "start": 1,
+              "end": 5,
+              "name": "mesh"
+            },
+            "selfClosing": false
+          },
+          "closingElement": {
+            "type": "JSXClosingElement",
+            "start": 102,
+            "end": 109,
+            "name": {
+              "type": "JSXIdentifier",
+              "start": 104,
+              "end": 108,
+              "name": "mesh"
+            }
+          },
+          "children": [
+            {
+              "type": "JSXElement",
+              "start": 15,
+              "end": 47,
+              "openingElement": {
+                "type": "JSXOpeningElement",
+                "start": 15,
+                "end": 47,
+                "attributes": [
+                  {
+                    "type": "JSXAttribute",
+                    "start": 28,
+                    "end": 44,
+                    "name": {
+                      "type": "JSXIdentifier",
+                      "start": 28,
+                      "end": 32,
+                      "name": "args"
+                    },
+                    "value": {
+                      "type": "JSXExpressionContainer",
+                      "start": 33,
+                      "end": 44,
+                      "expression": {
+                        "type": "ArrayExpression",
+                        "start": 34,
+                        "end": 43,
+                        "elements": [
+                          {
+                            "type": "Literal",
+                            "start": 35,
+                            "end": 36,
+                            "value": 1,
+                            "raw": "1"
+                          },
+                          {
+                            "type": "Literal",
+                            "start": 38,
+                            "end": 39,
+                            "value": 1,
+                            "raw": "1"
+                          },
+                          {
+                            "type": "Literal",
+                            "start": 41,
+                            "end": 42,
+                            "value": 1,
+                            "raw": "1"
+                          }
+                        ]
+                      }
+                    }
+                  }
+                ],
+                "name": {
+                  "type": "JSXIdentifier",
+                  "start": 16,
+                  "end": 27,
+                  "name": "boxGeometry"
+                },
+                "selfClosing": true
+              },
+              "closingElement": null,
+              "children": []
+            },
+            {
+              "type": "JSXElement",
+              "start": 56,
+              "end": 95,
+              "openingElement": {
+                "type": "JSXOpeningElement",
+                "start": 56,
+                "end": 95,
+                "attributes": [
+                  {
+                    "type": "JSXAttribute",
+                    "start": 78,
+                    "end": 92,
+                    "name": {
+                      "type": "JSXIdentifier",
+                      "start": 78,
+                      "end": 83,
+                      "name": "color"
+                    },
+                    "value": {
+                      "type": "JSXExpressionContainer",
+                      "start": 84,
+                      "end": 92,
+                      "expression": {
+                        "type": "Literal",
+                        "start": 85,
+                        "end": 91,
+                        "value": "blue",
+                        "raw": "'blue'"
+                      }
+                    }
+                  }
+                ],
+                "name": {
+                  "type": "JSXIdentifier",
+                  "start": 57,
+                  "end": 77,
+                  "name": "meshStandardMaterial"
+                },
+                "selfClosing": true
+              },
+              "closingElement": null,
+              "children": []
+            }
+          ]
+        }
+      }
+    ],
+    "sourceType": "module"
+  }
