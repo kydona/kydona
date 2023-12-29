@@ -12,6 +12,8 @@ import { EditorView, basicSetup } from 'codemirror';
 import { EditorState } from '@codemirror/state';
 import { keymap } from '@codemirror/view'
 import { javascript } from '@codemirror/lang-javascript';
+import {autocompletion, completionStatus, acceptCompletion} from "@codemirror/autocomplete"
+import {indentWithTab, indentLess, indentMore} from "@codemirror/commands"
 import {html} from '@codemirror/lang-html';
 //import { sanitize } from 'isomorphic-dompurify';
 //import * as THREE from 'three'
@@ -332,10 +334,10 @@ function App() {
     try{ 
         //MyParser.parse(ytext.toString(), acornOptions);
         //new Function("props", ytext.toString())
-        Box = new Function("props", ytext.toString())
+        //Box = new Function("props", ytext.toString())
         //Box({React : React, useFrame : useFrame})
-        boxElement = React.createElement(Box, {position: [1.2, 0, 0], color: colorContent, React: React, useFrame: useFrame, ycolor: ycolor, currentColor: colorContent})
-        setShouldRerender(ytext.toString())
+        //boxElement = React.createElement(Box, {position: [1.2, 0, 0], color: colorContent, React: React, useFrame: useFrame, ycolor: ycolor, currentColor: colorContent})
+        //setShouldRerender(ytext.toString())
         console.log("valid code")
     }catch(err){
         console.log("invalid code")
@@ -366,8 +368,20 @@ function App() {
             ...yUndoManagerKeymap
           ]),
           basicSetup,
-          javascript({jsx : true}),
+          javascript({jsx : true, typescript: true}),
           //html(),
+          //keymap.of([indentWithTab]),
+          keymap.of([
+            {
+              key: 'Tab',
+              preventDefault: true,
+              shift: indentLess,
+              run: e => {
+                if (!completionStatus(e.state)) return indentMore(e);
+                return acceptCompletion(e);
+              },
+            },
+          ]),
           yCollab(
             ytext,
             provider.awareness,
@@ -381,7 +395,7 @@ function App() {
     //setColorContent('gray')
     
     Box = new Function("props", ytext.toString())
-    boxElement = React.createElement(Box, {position: [1.2, 0, 0], color: colorContent, React: React, useFrame: useFrame, ycolor: ycolor, currentColor: colorContent})
+    //boxElement = React.createElement(Box, {position: [1.2, 0, 0], color: colorContent, React: React, useFrame: useFrame, ycolor: ycolor, currentColor: colorContent})
     setShouldRerender(ytext.toString())
     
     const editorView = new EditorView({

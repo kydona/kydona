@@ -17,6 +17,8 @@
     "@babel/preset-react": "^7.23.3",
     "@babel/standalone": "^7.23.6",
     "@babel/types": "^7.23.6",
+    "@codemirror/autocomplete": "^6.11.1",
+    "@codemirror/commands": "^6.3.3",
     "@codemirror/lang-css": "^6.2.1",
     "@codemirror/lang-html": "^6.4.7",
     "@codemirror/lang-javascript": "^6.2.1",

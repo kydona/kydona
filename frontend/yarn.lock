@@ -1035,7 +1035,7 @@
     "@babel/helper-validator-identifier" "^7.22.20"
     to-fast-properties "^2.0.0"
 
-"@codemirror/autocomplete@^6.0.0", "@codemirror/autocomplete@^6.7.1":
+"@codemirror/autocomplete@^6.0.0", "@codemirror/autocomplete@^6.11.1", "@codemirror/autocomplete@^6.7.1":
   version "6.11.1"
   resolved "https://registry.npmjs.org/@codemirror/autocomplete/-/autocomplete-6.11.1.tgz"
   integrity sha512-L5UInv8Ffd6BPw0P3EF7JLYAMeEbclY7+6Q11REt8vhih8RuLreKtPy/xk8wPxs4EQgYqzI7cdgpiYwWlbS/ow==
@@ -1045,13 +1045,13 @@
     "@codemirror/view" "^6.17.0"
     "@lezer/common" "^1.0.0"
 
-"@codemirror/commands@^6.0.0":
-  version "6.3.2"
-  resolved "https://registry.npmjs.org/@codemirror/commands/-/commands-6.3.2.tgz"
-  integrity sha512-tjoi4MCWDNxgIpoLZ7+tezdS9OEB6pkiDKhfKx9ReJ/XBcs2G2RXIu+/FxXBlWsPTsz6C9q/r4gjzrsxpcnqCQ==
+"@codemirror/commands@^6.0.0", "@codemirror/commands@^6.3.3":
+  version "6.3.3"
+  resolved "https://registry.npmjs.org/@codemirror/commands/-/commands-6.3.3.tgz"
+  integrity sha512-dO4hcF0fGT9tu1Pj1D2PvGvxjeGkbC6RGcZw6Qs74TH+Ed1gw98jmUgd2axWvIZEqTeTuFrg1lEB1KV6cK9h1A==
   dependencies:
     "@codemirror/language" "^6.0.0"
-    "@codemirror/state" "^6.2.0"
+    "@codemirror/state" "^6.4.0"
     "@codemirror/view" "^6.0.0"
     "@lezer/common" "^1.1.0"
 
@@ -1137,10 +1137,10 @@
     "@codemirror/view" "^6.0.0"
     crelt "^1.0.5"
 
-"@codemirror/state@^6.0.0", "@codemirror/state@^6.1.4", "@codemirror/state@^6.2.0":
-  version "6.3.3"
-  resolved "https://registry.npmjs.org/@codemirror/state/-/state-6.3.3.tgz"
-  integrity sha512-0wufKcTw2dEwEaADajjHf6hBy1sh3M6V0e+q4JKIhLuiMSe5td5HOWpUdvKth1fT1M9VYOboajoBHpkCd7PG7A==
+"@codemirror/state@^6.0.0", "@codemirror/state@^6.1.4", "@codemirror/state@^6.4.0":
+  version "6.4.0"
+  resolved "https://registry.npmjs.org/@codemirror/state/-/state-6.4.0.tgz"
+  integrity sha512-hm8XshYj5Fo30Bb922QX9hXB/bxOAVH+qaqHBzw5TKa72vOeslyGwd4X8M0c1dJ9JqxlaMceOQ8RsL9tC7gU0A==
 
 "@codemirror/view@^6.0.0", "@codemirror/view@^6.17.0", "@codemirror/view@^6.22.3":
   version "6.22.3"
