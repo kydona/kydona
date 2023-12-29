@@ -1,0 +1,153 @@
+{
+    "colors": {
+        "black": "#000000",
+    },
+    "variant": "light", // light or dark
+    "layout": {
+        "font": "monospace",
+        "background": "gray-800",
+        "foreground": "gray-50",
+        "caret": "grey-500",
+        "selection": "light-blue-500",
+        "gutterBackground": "grey-800",
+        "gutterForeground": "grey-500",
+        "lineHighlight": "gray-100"
+    },
+    "comment" : {
+        "default": "green-200",
+        "block": "",
+        "line": "",
+        "doc": ""
+    },
+    "name": {
+        "default": "blue-400",
+        "variable": {
+            "default" : "",
+        },
+        "type": "",
+        "tag": "",
+        "function": "",
+        "property": "",
+        "attribute": "",
+        "class": "",
+        "label": "",
+        "namespace": "",
+        "macro": "",
+    },
+    "literal": {
+        "default": "orange-400",
+        "bool" : "",
+        "regexp": "",
+        "escape": "",
+        "color": "",
+        "url": "",
+        "string": { 
+            "default": "black",
+            "docstring": "",
+            "character": "",
+            "attributeValue": "",
+        },
+        "number":{
+            "default": "red-400",
+            "integer": "",
+            "float": "",
+        },
+    },
+    "keyword": {
+        "default" : "purple-400",
+        "self": "",
+        "null": "",
+        "atom": "",
+        "unit": "",
+        "modifier": "",
+        "operator": "",
+        "control": "",
+        "definition": "", // a keyword that defines something
+        "module": "", // a keyword related to defining or interfacing with modules
+    },
+    "operator": {
+        "default": "black",
+        "deref": "",
+        "arithmetic": "",
+        "logic": "",
+        "bitwise": "",
+        "compare": "",
+        "update": "",
+        "definition": "",
+        "type": "",
+        "control": "",
+    },
+    "punctuation": {
+        "default": "black",
+        "separator": "", 
+        "bracket": {
+            "default": "",
+            "angle": "", // <>
+            "square": "", // []
+            "parenthesis": "", // ()
+            "brace": "", // {}
+        }
+    },
+    "content" : { // Content, for example plain text in XML or markup documents.
+        "default": "black",
+        "heading": {
+            "default": "",
+            "heading1": "",
+            "heading2": "",
+            "heading3": "",
+            "heading4": "",
+            "heading5": "",
+            "heading6": "",
+        },
+        "separator": "", // A prose separator (such as a horizontal rule).
+        "list": "",
+        "quote": "",
+        "emphasis": "",
+        "strong": "",
+        "link": "",
+        "monospace": "", // text styled as code or monospaced
+        "strikethrough": "",
+    },
+    "changed":{
+        "default": "yellow-400",
+        "inserted" : "green-400",
+        "deleted" : "red-400",
+        "invalid": "orange-400",
+    },
+    "meta": { // metadata or meta-information
+        "default": "black",
+        "document": "", // metadata that applies to the entire document
+        "annotation" : "", // metadata that annotates or adds attributes to a given syntactic element.
+        "processing": "", //  Processing instruction or preprocessor directive.
+    },
+    /*    
+    modifiers : {
+        // Modifier that indicates that a given element is being defined. 
+        // Expected to be used with the various name tags. 
+        definition: "",
+        
+        // Modifier that indicates that something is constant. 
+        // Mostly expected to be used with variable names.
+        constant: "",
+        
+        // Modifier used to indicate that a variable or property name 
+        // is being called or defined as a function.
+        function : "",
+        
+        // Modifier that can be applied to name to indicate that they 
+        // belong to the language's standard environment.
+        standard: "",
+        
+        // Modifier that indicates a given name is local to some scope.
+        local: "",
+        
+        // A generic variant Modifier that can be used to tag 
+        // language-specific alternative variants of some common tag. 
+        // It is recommended for themes to define special forms of at least 
+        // the string and variable name tags, since those come up a lot.
+        special: "",
+    }
+    */   
+}
+
+

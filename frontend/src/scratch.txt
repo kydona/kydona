@@ -1,0 +1,291 @@
+/*
+// Parse the code string into an AST
+const ast = parser.parse(codeString, {
+  plugins: ['jsx'], // Enable JSX parsing
+});
+
+// Traverse the AST to find the BoxMin function
+let boxMinFunction;
+
+traverse(ast, {
+  FunctionDeclaration(path) {
+    if (path.node.id.name === 'BoxMin') {
+      boxMinFunction = path.node;
+      path.stop(); // Stop traversing once the BoxMin function is found
+    }
+  },
+});
+
+console.log(boxMinFunction);
+
+*/
+
+
+
+function BoxMin(props) {
+    return (
+      <mesh
+        {...props}
+        scale={1}>
+        <boxGeometry args={[1, 1, 1]} />
+        <meshStandardMaterial color={props.color ?? 'gray'} />
+        </mesh>
+    )
+    }
+    
+const codeString = `<mesh>
+    <boxGeometry args={[1, 1, 1]} />
+    <meshStandardMaterial color={'blue'} />
+  </mesh>
+`;
+
+const codeExpression = `"expression": {
+    "type": "ArrayExpression",
+    "start": 34,
+    "end": 43,
+    "elements": [
+      {
+        "type": "Literal",
+        "start": 35,
+        "end": 36,
+        "value": 1,
+        "raw": "1"
+      },
+      {
+        "type": "Literal",
+        "start": 38,
+        "end": 39,
+        "value": 1,
+        "raw": "1"
+      },
+      {
+        "type": "Literal",
+        "start": 41,
+        "end": 42,
+        "value": 1,
+        "raw": "1"
+      }
+    ]
+  }`
+  
+const complicatedCode = `
+function Box(props) {
+    // This reference will give us direct access to the mesh
+    const meshRef = useRef()
+    // Set up state for the hovered and active state
+    const [hovered, setHover] = useState(false)
+    const [active, setActive] = useState(false)
+    // Subscribe this component to the render-loop, rotate the mesh every frame
+    useFrame((state, delta) => (meshRef.current.rotation.x += delta))
+    // Return view, these are regular three.js elements expressed in JSX
+    return (
+      <mesh
+        {...props}
+        ref={meshRef}
+        scale={active ? 1.5 : 1}
+        onClick={(event) => setActive(!active)}
+        onPointerOver={(event) => {setHover(true)
+            ycolor.set("color", userHex)}}
+        onPointerOut={(event) => {
+            setHover(false)
+            ycolor.set("color", defaultColor)}}>
+        <boxGeometry args={[1, 1, 1]} />
+        <meshStandardMaterial color={props.color ?? 'gray'} />
+      </mesh>
+    )
+  }`
+  
+  
+/*
+function Box(props) {
+    // This reference will give us direct access to the mesh
+    const meshRef = useRef()
+    // Set up state for the hovered and active state
+    const [hovered, setHover] = useState(false)
+    const [active, setActive] = useState(false)
+    // Subscribe this component to the render-loop, rotate the mesh every frame
+    useFrame((state, delta) => (meshRef.current.rotation.x += delta))
+    // Return view, these are regular three.js elements expressed in JSX
+    return (
+      <mesh
+        {...props}
+        ref={meshRef}
+        scale={active ? 1.5 : 1}
+        onClick={(event) => setActive(!active)}
+        onPointerOver={(event) => {setHover(true)
+            ycolor.set("color", userHex)}}
+        onPointerOut={(event) => {
+            setHover(false)
+            ycolor.set("color", defaultColor)}}>
+        <boxGeometry args={[1, 1, 1]} />
+        <meshStandardMaterial color={props.color ?? 'gray'} />
+      </mesh>
+    )
+  }
+*/
+  
+// works
+//  const add_numbers = new Function("a", "b", "return a + b");
+//  console.log(add_numbers(1, 2)); // Output: 3
+
+
+
+
+let Box = new Function("props", 
+`
+const React = props.React
+// This reference will give us direct access to the mesh
+const meshRef = React.useRef()
+// Set up state for the hovered and active state
+const [hovered, setHover] = React.useState(false)
+const [active, setActive] = React.useState(false)
+// Subscribe this component to the render-loop, rotate the mesh every frame
+props.useFrame((state, delta) => (meshRef.current.rotation.x += delta))
+// Return view, these are regular three.js elements expressed in JSX
+
+const meshElement = React.createElement("mesh", {ref: meshRef}, 
+    React.createElement("boxGeometry", {args: [1, 1, 1]}), 
+    React.createElement("meshStandardMaterial", {color: "red"}))
+    
+return (meshElement)`)
+
+/*
+  function BoxMin(props) {
+    const meshRef = useRef()
+    return (
+      <mesh
+        {...props}
+        ref={meshRef}
+        scale={1}>
+        <boxGeometry args={[1, 1, 1]} />
+        <meshStandardMaterial color={'blue'} />
+      </mesh>
+    )
+  }
+*/
+
+//let Box = new Function()
+//console.log(Box)
+/*
+console.log("ytext", ytext.toString())
+const funcText = `const React = props.React
+// This reference will give us direct access to the mesh
+const meshRef = React.useRef()
+// Set up state for the hovered and active state
+const [hovered, setHover] = React.useState(false)
+const [active, setActive] = React.useState(false)
+// Subscribe this component to the render-loop, rotate the mesh every frame
+props.useFrame((state, delta) => (meshRef.current.rotation.x += delta))
+// Return view, these are regular three.js elements expressed in JSX
+
+const meshElement = React.createElement("mesh", {ref: meshRef}, 
+    React.createElement("boxGeometry", {args: [1, 1, 1]}), 
+    React.createElement("meshStandardMaterial", {color: "green"}))
+    
+return (meshElement)`
+*/
+
+/*
+const acornOptions = {ecmaVersion: 2020, sourceType: "module", plugins: {jsx: true}, location: false}
+*/
+/*
+const testCode = `
+let x = 25
+`
+try{ 
+    MyParser.parse(testCode, acornOptions);
+    console.log("valid test code")
+}catch(err){
+    console.log("invalid test code")
+}
+
+
+const testCode2 = `
+let x = 25
+thisshouldfail
+`
+try{ 
+    MyParser.parse(testCode2, acornOptions);
+    console.log("valid test code 2")
+}catch(err){
+    console.log("invalid test code 2")
+}
+*/
+
+//let Box = new Function("props", funcText)
+
+
+
+//  app
+
+
+   const [htmlContent, setHtmlContent] = useState('');
+//   const [colorContent, setColorContent] = useState('');
+//   const [shouldRerender, setShouldRerender] = useState('');
+  
+  //const myBox = useRef(null);
+  
+
+
+// box
+
+
+    ytext.observe(() => {
+        //setHtmlContent(ytext.toString());
+        //console.log("ytext", ytext.toString())
+        //const OldBox = Box
+        try{ 
+            //MyParser.parse(ytext.toString(), acornOptions);
+            //new Function("props", ytext.toString())
+            //Box = new Function("props", ytext.toString())
+            //Box({React : React, useFrame : useFrame})
+            //boxElement = React.createElement(Box, {position: [1.2, 0, 0], color: colorContent, React: React, useFrame: useFrame, ycolor: ycolor, currentColor: colorContent})
+            //setShouldRerender(ytext.toString())
+            console.log("valid code")
+        }catch(err){
+            console.log("invalid code")
+            //Box = OldBox
+            console.log(err)
+        }
+        //console.log(ytext.toString())
+        //console.log(Box)
+        
+        
+        
+        /*
+        <Canvas
+        style={{height:screen.height.valueOf()-300}}
+        >
+            <ambientLight />
+            <pointLight position={[10, 10, 10]} />
+        
+            
+        </Canvas>
+        <Box key={ytext.toString()} position={[-1.2,0,0]} 
+            color={colorContent} React={React} useFrame={useFrame}></Box>
+        <div id="html-container" key={htmlContent} dangerouslySetInnerHTML={{ __html: htmlContent }} />
+        <BoxMin>
+        {boxElement}
+        {meshElement}
+        //const element = React.createElement(acornObject );
+    
+        //works
+        //const meshElement = React.createElement("mesh", {}, 
+        //  React.createElement("boxGeometry", {args: [1, 1, 1]}), 
+        //  React.createElement("meshStandardMaterial", {color: "green"}))
+        
+        // const meshElement = React.createElement(Box, {position: [1.2, 0, 0], color: colorContent})
+        //let boxElement = React.createElement(Box, {position: [1.2, 0, 0], color: colorContent, React: React, useFrame: useFrame, ycolor: ycolor, currentColor: colorContent})
+        
+
+            //setHtmlContent(ytext.toString());
+            //setColorContent('gray')
+            
+            //Box = new Function("props", ytext.toString())
+            //boxElement = React.createElement(Box, {position: [1.2, 0, 0], color: colorContent, React: React, useFrame: useFrame, ycolor: ycolor, currentColor: colorContent})
+            //setShouldRerender(ytext.toString())
+        
+        */
+        
+    });
+        
