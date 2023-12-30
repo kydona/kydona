@@ -20,7 +20,6 @@ async function fetchJSON5(url: string){
 const VITE_URL = 'http://localhost:5173/'
 
 
-
 const ytext = defaultYDoc.getText("codemirror")
 while (ytext.toString() == ""){
     ////console.log(ytext.toString())
@@ -51,7 +50,7 @@ for (const [key, value] of Object.entries(rawTheme.layout)) {
 let styles = generateStyles(rawTheme)
 
 ytext.observe(event => {
-    //console.log("theme changed")
+    
     try{        
         rawTheme = JSON5.parse(ytext.toString())
         rawTheme = removeEmptyValues(rawTheme)
@@ -73,7 +72,7 @@ ytext.observe(event => {
         setTimeout(function() {
             modifyEditorView(theme)
             console.log("theme changed")
-          }, 0); // Delay of 0ms causes it to be executed asynchronously, see if there is a better way to do this
+        }, 0); // Delay of 0ms causes it to be executed asynchronously, see if there is a better way to do this
         //modifyEditorView(theme)
         //console.log("theme changed")
     }catch(e){
@@ -161,68 +160,12 @@ theme = createTheme({
     variant: rawTheme.variant,
 	settings: layout,
 	styles: styles, 
-    /*[
+    /*styles: [
 		{
 			tag: t.comment,
 			color: '#787b8099',
 		},
-		{
-			tag: t.string,
-			color: '#86b300',
-		},
-		{
-			tag: t.regexp,
-			color: '#4cbf99',
-		},
-		{
-			tag: [t.number, t.bool, t.null],
-			color: '#ffaa33',
-		},
-		{
-			tag: t.variableName,
-			color: '#5c6166',
-		},
-		{
-			tag: [t.definitionKeyword, t.modifier],
-			color: '#fa8d3e',
-		},
-		{
-			tag: [t.keyword, t.special(t.brace)],
-			color: '#fa8d3e',
-		},
-		{
-			tag: t.operator,
-			color: '#ed9366',
-		},
-		{
-			tag: t.separator,
-			color: '#5c6166b3',
-		},
-		{
-			tag: t.punctuation,
-			color: '#5c6166',
-		},
-		{
-			tag: [t.definition(t.propertyName), t.function(t.variableName)],
-			color: '#f2ae49',
-		},
-		{
-			tag: [t.className, t.definition(t.typeName)],
-			color: '#22a4e6',
-		},
-		{
-			tag: [t.tagName, t.typeName, t.self, t.labelName],
-			color: '#55b4d4',
-		},
-		{
-			tag: t.angleBracket,
-			color: '#55b4d480',
-		},
-		{
-			tag: t.attributeName,
-			color: '#f2ae49',
-		},
-	],
+        ...]
     */
 });
 

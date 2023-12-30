@@ -288,4 +288,20 @@ try{
         */
         
     });
-        
+    
+    
+    
+            {/*
+        <group ref={textRef}>
+            <Html 
+            occlude="blending" 
+            transform 
+            //fullscreen  
+            {...props}>
+                <div>
+                {/* Render the editor component }
+                
+                </div>
+            </Html>
+        </group> 
+        */}

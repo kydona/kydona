@@ -18,6 +18,7 @@ export interface createEditorOptions {
 }
 
 export const themeCompartment = new Compartment
+export const languageCompartment = new Compartment
 
 export function createEditor(options : createEditorOptions) {
     const {ytext, provider, language = "typescript"} = options;
@@ -62,7 +63,8 @@ export function createEditor(options : createEditorOptions) {
             { undoManager }
         ),
         
-        themeCompartment.of(theme),
+        // the theme is in a compartment so it can be changed dynamically
+        // themeCompartment.of(theme),
                
         ]
     
@@ -81,9 +83,8 @@ export function createEditor(options : createEditorOptions) {
         default: // default to typescript
             editorExtensions.push(javascript({jsx : true, typescript: true}))
     }
-    //console.log(editorExtensions)
     
-    
+    // create and return the editor state
     return EditorState.create({
         doc: ytext.toString(),
         extensions: editorExtensions
