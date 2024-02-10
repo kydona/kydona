@@ -1,0 +1,11 @@
+{
+  "tasks": {
+    "main": "deno run -A --unstable src/main.ts",
+    "dev": "deno cache deps.ts && NODE_ENV='development' deno run -A --unstable --watch src/main.ts",
+    "build": "deno compile -A --output backend src/main.ts"
+  },
+  "imports": {
+    "@/": "./src/",
+    "deps": "./deps.ts"
+  }
+}

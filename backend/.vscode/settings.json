@@ -1,0 +1,10 @@
+{
+"deno.enable": true,
+"deno.lint": true,
+"deno.unstable": true,
+"files.associations": {
+  /* give vento files html syntax highlighting
+      and tailwindcss intellisense support */
+  "*.vto": "html"
+}
+}
